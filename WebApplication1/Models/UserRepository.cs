@@ -27,12 +27,8 @@ namespace WebApplication1.Models
             using (IDbConnection db = new SQLiteConnection(connectionString))
             {
                 users = db.Query<User>("SELECT * FROM Users").AsList();
-//                Console.WriteLine("users: {0}", JsonConvert.SerializeObject(users));
             }
-
             return users;
-//            return Json(users);
-//                return new JavaScriptSerializer().Serialize(users);
         }
 
         public User Get(int id)
@@ -42,7 +38,6 @@ namespace WebApplication1.Models
             {
                 user = db.Query<User>("SELECT * FROM Users WHERE id = @id", new {id}).FirstOrDefault();
             }
-
             return user;
         }
 
@@ -55,25 +50,26 @@ namespace WebApplication1.Models
                 int userId = db.Query<int>(sqlQuery, user).FirstOrDefault();
                 user.Id = userId;
             }
-
             return user;
         }
 
-        public void Update(User user)
+        public int Update(User user)
         {
             using (IDbConnection db = new SQLiteConnection(connectionString))
             {
                 var sqlQuery = "UPDATE Users SET Name = @Name, Age = @Age WHERE Id = @Id";
-                db.Execute(sqlQuery, user);
+                var updatedRowsCount = db.Execute(sqlQuery, user);
+                return updatedRowsCount;
             }
         }
 
-        public void Delete(int id)
+        public int Delete(int id)
         {
             using (IDbConnection db = new SQLiteConnection(connectionString))
             {
                 var sqlQuery = "DELETE FROM Users WHERE Id = @id";
-                db.Execute(sqlQuery, new {id});
+                var updatedRowsCount = db.Execute(sqlQuery, new {id});
+                return updatedRowsCount;
             }
         }
     }

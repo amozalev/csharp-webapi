@@ -37,7 +37,7 @@ namespace WebApplication1.Controllers
         }
     }
 
-    public class ValuesController : ApiController
+    public class UsersController : ApiController
     {
         UserRepository repo = new UserRepository();
 
@@ -56,18 +56,24 @@ namespace WebApplication1.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody] string value)
+        public IHttpActionResult Post([FromBody] User user)
         {
+            var new_user = repo.Create(user);
+            return new ResponseClass(JsonConvert.SerializeObject(new_user), Request);
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
+        public IHttpActionResult Put([FromBody] User user)
         {
+            var updatedRowsCount = repo.Update(user);
+            return new ResponseClass(JsonConvert.SerializeObject(updatedRowsCount), Request);
         }
 
         // DELETE api/values/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+            var updatedRowsCount = repo.Delete(id);
+            return new ResponseClass(JsonConvert.SerializeObject(updatedRowsCount), Request);
         }
     }
 }
