@@ -33,6 +33,7 @@ namespace WebApplication1.Controllers
                 Content = new StringContent(_value),
                 RequestMessage = _request
             };
+            response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:3000");
             return Task.FromResult(response);
         }
     }
