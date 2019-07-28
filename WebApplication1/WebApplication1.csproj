@@ -8038,6 +8038,8 @@
       <TypeScriptCompile Include="client\src\index.tsx" />
       <TypeScriptCompile Include="client\src\react-app-env.d.ts" />
       <TypeScriptCompile Include="client\src\serviceWorker.ts" />
+      <TypeScriptCompile Include="client\src\User.tsx" />
+      <TypeScriptCompile Include="client\src\UserList.tsx" />
     </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
