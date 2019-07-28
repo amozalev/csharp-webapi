@@ -12,16 +12,21 @@ interface IState {
 class User extends React.Component<IProps, IState> {
     Id: number;
     Name: string;
-    
+
     constructor(props: IProps) {
         super(props);
-        
+
         this.Id = props.Id;
         this.Name = props.Name;
     }
 
     render() {
-        return <li>id: {this.Id}, name: {this.Name}</li>
+        return (
+            <tr>
+                <td>{this.Id}</td>
+                <td>{this.Name}</td>
+            </tr>
+        )
     }
 }
 

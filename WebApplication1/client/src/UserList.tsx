@@ -6,7 +6,7 @@ interface UserListProps {
 }
 
 interface IState {
-    users: User[];
+    users?: User[];
 }
 
 class UserList extends React.Component<IState> {
@@ -27,13 +27,20 @@ class UserList extends React.Component<IState> {
     }
 
     setUsers() {
-        const lst = this.state.users.map((user: User, i: number) => (
+        const lst = this.state.users && this.state.users.map((user: User, i: number) => (
                 <User key={i} Id={user.Id} Name={user.Name}/>
             )
         );
-        return (<ul>
-            {lst}
-        </ul>)
+        return (
+            <table>
+                <thead>
+                <th>Id</th>
+                <th>Name</th>
+                </thead>
+                <tbody>
+                {lst}
+                </tbody>
+            </table>)
     }
 
     render() {
