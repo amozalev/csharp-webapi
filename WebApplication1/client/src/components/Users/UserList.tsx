@@ -5,12 +5,12 @@ interface UserListProps {
     users: User[];
 }
 
-interface IState {
+interface State {
     users?: User[];
 }
 
-class UserList extends React.Component<IState> {
-    state: IState;
+class UserList extends React.Component<State> {
+    state: State;
 
     constructor(props: UserListProps) {
         super(props);
