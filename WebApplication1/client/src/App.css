@@ -52,10 +52,18 @@ header ul li {
 #content {
     border: 1px solid #000;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
 }
 
 #content table {
     margin: 20px;
+    text-align: left;
+}
+
+#fullSubject {
+    border: 1px solid #000;
+    float: left;
+    width: 100%;
 }

@@ -8038,14 +8038,15 @@
     <TypeScriptCompile Include="client\node_modules\commander\typings\index.d.ts" />
     <TypeScriptCompile Include="client\src\App.test.tsx" />
     <TypeScriptCompile Include="client\src\App.tsx" />
+    <TypeScriptCompile Include="client\src\components\Subjects\Subject.tsx" />
+    <TypeScriptCompile Include="client\src\components\Subjects\SubjectList.tsx" />
     <TypeScriptCompile Include="client\src\components\Users\User.tsx" />
     <TypeScriptCompile Include="client\src\components\Users\UserList.tsx" />
+    <TypeScriptCompile Include="client\src\FullSubject.tsx" />
     <TypeScriptCompile Include="client\src\index.tsx" />
     <TypeScriptCompile Include="client\src\react-app-env.d.ts" />
     <TypeScriptCompile Include="client\src\routes.tsx" />
     <TypeScriptCompile Include="client\src\serviceWorker.ts" />
-    <TypeScriptCompile Include="client\src\Subject.tsx" />
-    <TypeScriptCompile Include="client\src\SubjectList.tsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import SubjectList from "./SubjectList";
-import UserList from "./components/Users/UserList";
-import {NavLink, Route, Switch, withRouter} from "react-router-dom";
+import {NavLink, withRouter} from "react-router-dom";
+import routes from "./routes";
 
 const App: React.FC = () => {
     return (
@@ -18,11 +17,13 @@ const App: React.FC = () => {
                     <li>
                         <NavLink to={'/subjects'}>Subjects</NavLink>
                     </li>
+                    <li>
+                        <NavLink to={'/all-subjects'}>All Subjects</NavLink>
+                    </li>
                 </ul>
             </header>
             <div id="content">
-                <Route path={'/users'} component={UserList}/>
-                <Route path={'/subjects'} component={SubjectList}/>
+                {routes}
             </div>
         </div>
     );

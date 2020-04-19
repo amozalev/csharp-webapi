@@ -1,15 +1,15 @@
 import React from "react";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
-import App from "./App";
+import {Route, Redirect, Switch} from "react-router-dom";
 import UserList from "./components/Users/UserList";
-import SubjectList from "./SubjectList";
+import SubjectList from "./components/Subjects/SubjectList";
 
 const routes = (
-    <BrowserRouter>
-        <Switch>
-            <Route path={'/'} component={App} />
-        </Switch>
-    </BrowserRouter>
+    <Switch>
+        <Redirect exact from={'/all-subjects'} to={'/subjects'}/>
+        <Route path={'/users'} component={UserList}/>
+        <Route path={'/subjects'} component={SubjectList}/>
+        <Route render={() => (<h2>404Page not found</h2>)} />
+    </Switch>
 )
 
 export default routes;

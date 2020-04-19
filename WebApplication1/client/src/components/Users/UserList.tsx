@@ -34,8 +34,10 @@ class UserList extends React.Component<State> {
         return (
             <table>
                 <thead>
-                <th>Id</th>
-                <th>Name</th>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                </tr>
                 </thead>
                 <tbody>
                 {lst}

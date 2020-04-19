@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {NavLink} from "react-router-dom";
 
 interface IProps {
     Id: number,
@@ -20,7 +21,7 @@ class Subject extends React.Component<IProps> {
         return (
             <tr>
                 <td>{this.Id}</td>
-                <td>{this.Name}</td>
+                <td><NavLink to={'/subjects/' + this.Id}>{this.Name}</NavLink></td>
             </tr>
         )
     }
