@@ -6,9 +6,10 @@ import {BrowserRouter, Route} from "react-router-dom";
 import App from "./App";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import {reducer} from "./store/reducer";
+import rootReducer from "./store/reducer";
 
-const store = createStore(reducer);
+const store = createStore(rootReducer);
+console.log('==store', store.getState());
 
 const app = (
     <Provider store={store}>

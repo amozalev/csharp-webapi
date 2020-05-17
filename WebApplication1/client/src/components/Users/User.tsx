@@ -1,6 +1,11 @@
 import * as React from 'react'
 
-interface IProps {
+export interface UserType {
+    id: number,
+    name: string
+}
+
+interface UserProps {
     Id: number,
     Name: string
 }
@@ -9,11 +14,11 @@ interface IState {
 
 }
 
-class User extends React.Component<IProps, IState> {
+class User extends React.Component<UserProps, IState> {
     Id: number;
     Name: string;
 
-    constructor(props: IProps) {
+    constructor(props: UserProps) {
         super(props);
 
         this.Id = props.Id;

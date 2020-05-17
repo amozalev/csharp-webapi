@@ -8047,9 +8047,11 @@
     <TypeScriptCompile Include="client\src\react-app-env.d.ts" />
     <TypeScriptCompile Include="client\src\routes.tsx" />
     <TypeScriptCompile Include="client\src\serviceWorker.ts" />
-    <TypeScriptCompile Include="client\src\store\actions.ts" />
     <TypeScriptCompile Include="client\src\store\reducer.ts" />
-    <TypeScriptCompile Include="client\src\store\types.ts" />
+    <TypeScriptCompile Include="client\src\store\subjects-reducer\subjects-actions.ts" />
+    <TypeScriptCompile Include="client\src\store\subjects-reducer\subjects-reducer.ts" />
+    <TypeScriptCompile Include="client\src\store\users-reducer\users-actions.ts" />
+    <TypeScriptCompile Include="client\src\store\users-reducer\users-reducer.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

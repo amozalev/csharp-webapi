@@ -1,6 +1,11 @@
 import * as React from 'react'
 import {NavLink} from "react-router-dom";
 
+export interface SubjectType {
+    id: number,
+    name: string
+}
+
 interface IProps {
     Id: number,
     Name: string

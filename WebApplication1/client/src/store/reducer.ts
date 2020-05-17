@@ -1,9 +1,10 @@
-import {firstStateType} from "./types";
+import {combineReducers} from "redux";
+import usersReducer from "./users-reducer/users-reducer";
+import subjectsReducer from "./subjects-reducer/subjects-reducer";
 
-const initialState: firstStateType = {
-    param: ''
-}
+const rootReducer = combineReducers({
+    usersReducer,
+    subjectsReducer
+});
 
-export const reducer = (state: firstStateType = initialState, action: any) => {
-    return {...state, ...action.payload}
-}
+export default rootReducer;
