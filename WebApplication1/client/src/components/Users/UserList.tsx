@@ -1,33 +1,28 @@
 import * as React from 'react'
 import User from "./User";
 
-interface UserListProps {
-    users: User[];
+export interface ReduxProps {
+    users: User[]
 }
 
-interface State {
-    users?: User[];
+export interface DispatchProps {
+    fetchUsers: () => {};
 }
 
-class UserList extends React.Component<State> {
-    state: State;
+interface UserListProps extends ReduxProps, DispatchProps {
+}
 
+class UserList extends React.Component<UserListProps, {}> {
     constructor(props: UserListProps) {
         super(props);
-        this.state = {'users': []};
     }
 
     componentDidMount() {
-        fetch('http://localhost:5000/api/users')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({users: data});
-            })
-            .catch(console.log)
+        this.props.fetchUsers();
     }
 
     setUsers() {
-        const lst = this.state.users && this.state.users.map((user: User, i: number) => (
+        const lst = this.props.users.map((user: User, i: number) => (
                 <User key={i} Id={user.Id} Name={user.Name}/>
             )
         );

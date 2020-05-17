@@ -8042,6 +8042,8 @@
     <TypeScriptCompile Include="client\src\components\Subjects\SubjectList.tsx" />
     <TypeScriptCompile Include="client\src\components\Users\User.tsx" />
     <TypeScriptCompile Include="client\src\components\Users\UserList.tsx" />
+    <TypeScriptCompile Include="client\src\containers\subjectListContainer.tsx" />
+    <TypeScriptCompile Include="client\src\containers\userListContainer.tsx" />
     <TypeScriptCompile Include="client\src\FullSubject.tsx" />
     <TypeScriptCompile Include="client\src\index.tsx" />
     <TypeScriptCompile Include="client\src\react-app-env.d.ts" />

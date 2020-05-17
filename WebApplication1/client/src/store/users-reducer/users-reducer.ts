@@ -11,11 +11,18 @@ const initialState: StateType = {
 
 const usersReducer = (state: StateType = initialState, action: actions.actionType) => {
     switch (action.type) {
+        case(actions.FETCH_USERS): {
+            return Object.assign({}, state,
+                {
+                    users: action.payload
+                })
+        }
         case(actions.ADD_USER): {
             return Object.assign({}, state, action.payload);
         }
         case(actions.DELETE_USER): {
-            return Object.assign({}, state, action.payload);
+            const updatedUsers = state.users.filter(user => user.id !== action.payload.id)
+            return Object.assign({}, state, updatedUsers);
         }
         default:
             return state

@@ -3,37 +3,29 @@ import Subject from "./Subject";
 import {Route, withRouter, RouteComponentProps} from "react-router-dom";
 import FullSubject from "../../FullSubject";
 
-interface ownProps {
+export interface ReduxProps {
     subjects: Subject[];
 }
 
-interface State {
-    subjects?: Subject[];
+export interface DispatchProps {
+    fetchSubjects: () => {};
 }
 
-interface Props extends ownProps, RouteComponentProps {
+interface SubjectListProps extends ReduxProps, DispatchProps, RouteComponentProps {
 }
 
-class SubjectList extends React.Component<Props, State> {
-    state: State;
+class SubjectList extends React.Component<SubjectListProps, {}> {
 
-    constructor(props: Props) {
+    constructor(props: SubjectListProps) {
         super(props);
-
-        this.state = {'subjects': []};
     }
 
     componentDidMount() {
-        fetch('http://localhost:5000/api/subjects')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({subjects: data});
-            })
-            .catch(console.log)
+        this.props.fetchSubjects();
     }
 
     setSubjectList() {
-        const lst = this.state.subjects && this.state.subjects.map((subject: Subject, i: number) => (
+        const lst = this.props.subjects.map((subject: Subject, i: number) => (
                 <Subject key={subject.Id} Id={subject.Id} Name={subject.Name}/>
             )
         );
